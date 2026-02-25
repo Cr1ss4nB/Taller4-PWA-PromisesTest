@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pagos - Promises</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>💳 Sistema de Procesamiento de Pagos</h1>
+        <p>Demostración de Promises en JavaScript</p>
+    </header>
+
+    <main>
+        <div id="connectionStatus" class="status">
+            <span id="statusIndicator">●</span>
+            <span id="statusText">Verificando conexión...</span>
+        </div>
+
+        <form id="paymentForm">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" id="customerName" placeholder="Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label>Número de Cédula</label>
+                <input type="text" id="idNumber" placeholder="1234567890" required>
+            </div>
+
+            <div class="form-group">
+                <label>Número de Tarjeta (16 dígitos)</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Expiración</label>
+                    <input type="text" id="expiryDate" placeholder="MM/AA" maxlength="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label>CVV (3 dígitos)</label>
+                    <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Monto a Pagar ($)</label>
+                <input type="number" id="amount" placeholder="100.00" step="0.01" min="1" required>
+            </div>
+
+            <button type="submit" id="submitBtn">Procesar Pago</button>
+        </form>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Procesando pago...</p>
+        </div>
+
+        <div id="resultsArea" class="results hidden"></div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
